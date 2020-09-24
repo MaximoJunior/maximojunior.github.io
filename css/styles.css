@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Source+Sans+Pro:wght@200&display=swap');
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    transition: scroll-behavior 500ms ease-out;
+}
+/*--Navbar--*/
+#navbar{
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+.navbar-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@media (max-width: 480px){
+    .navbar-list {
+        justify-content: center;
+    }
+}
+
+.navbar-list li{
+    margin: 2rem 1.5rem;
+    list-style-type: none;
+}
+.navbar-list a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    background: #DFDD44;
+    color: #4B4DD3;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.459);
+    transition: color 400ms ease-in-out;
+}
+.navbar-list a:hover {
+    color: white;
+}
+
+/*--welcome-section*/
+#welcome-section {
+    position: sticky;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background: #4446DF;
+}
+.container-text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+#title{
+    font-size: 3.5rem;
+    color: #E8E8FB;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.container-text p {
+    font-size: 1.3rem;
+    color: #DFDD44;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+}
+.container-icons{
+    position: absolute;
+    left: 50%;
+    margin: 60px auto;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.container-icons img{
+    width: 4vw;
+    margin: 1vw;
+    border-radius: 50%;
+}
+@media (max-width: 480px){
+    .container-icons img{
+        width: 12vw;
+    }
+}
+
+/*--projects--*/
+#projects {
+   padding: 2rem;
+   background: rgb(250, 248, 248);
+}
+.project-img, img {
+    width: 100%;
+}
+.sub-title {
+    text-align: center;
+    text-decoration: underline;
+    margin: 3rem auto;
+    font-size: 2rem;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.grid {
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 4vw;
+    justify-items: center;
+    align-items: center;
+}
+@media (max-width: 480px){
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(80%, 90%));
+        grid-gap: 2vw;
+        justify-items: center;
+        align-items: center;
+    }
+}
+
+.project-tile {
+    position: relative;
+}
+
+.project-container-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0);
+    transition: height 500ms ease-in-out;
+}
+.project-tile:hover .project-container-logo {
+    height: 100%;
+}
+
+
+.project-container-logo img {
+   width: 40px;
+   display: block;
+   margin: 1rem;
+   border-radius: 50%;
+} 
+.container-description {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    color: #4446DF;
+    transition: background 1s ease-in-out;
+}
+.project-tile:hover .container-description {
+    background: black;
+    color: white;
+}
+.container-description p {
+    font-size: 1.3rem;
+    padding: 0.5em;
+}
+
+#btnShow {
+    display: block;
+    width: auto;
+    max-width: 20%;
+    margin:  1rem auto;
+    padding: 8px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.2rem;
+    border: none;
+    background: #4446DF;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 480px){
+    #btnShow {
+        max-width: 40%;
+    }
+}
+
+#btnShow .icon-btn {
+    margin-left: 4px;
+    transition: margin-left 500ms ease-in-out;
+}
+
+#btnShow:hover .icon-btn{
+    margin-left: 8px;
+}
+
+/*--Contact--*/
+#contact{
+    padding: 2rem;
+    background: black;
+    border-bottom: 1px solid #DFDD44;
+    color: white;
+}
+#contact  div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contact  div button {
+    text-align: center;
+    border: none;
+    background: inherit;
+    color: white;
+    font-size: 3rem;
+    margin: 5px 15px;
+    cursor: pointer;
+    transition: transform 500ms ease-in-out;
+}
+#contact  div button:hover {
+    transform: scale(0.9);
+}
+
+/*--Footer--*/
+footer {
+    padding: 3rem;
+    background: black;
+    color: white;
+}
+
+
+
+
