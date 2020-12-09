@@ -4,13 +4,68 @@
        <title>Video</title>
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+     *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+     }
+      .container{
+         width: 50vw;
+         height: 50vh;
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         border-radius: 5px;
+      }
+      h1 {
+          text-align: center;
+          margin: 10px;
+      }
+
+      .circle {
+          width: 30vh;
+          height: 30vh;
+          margin: auto;
+          border-style: solid;
+          border-color: black;
+          border-width: 16px;
+          border-radius: 50%;
+          border-top-color: white;
+          animation-name: rotar;
+          animation-duration: 1000ms;
+          animation-iteration-count: infinite;
+      }
+      @keyframes rotar {
+         from {
+           transform: rotate(0deg);
+         }
+         to{
+            transform: rotate(360deg);
+         }
+      }
+    </style>   
     </head>
     <body>
-
+       <div class="container">
+         <h1><span id="segs">5</span> seconds</h1>
+         <div class="circle"></div>
+       </div>
     </body>
     <script>
+        let s = 5;
+     
+        setInterval(()=>{
+            s -= 1;
+            setSeconds(s);
+         } , 1000);
          setTimeout(()=>{
             window.location = "https://youtu.be/NDPKupRuHgM";
          },5000)
+
+         function setSeconds(s){
+             document.getElementById("segs").innerHTML = `${s}`;
+         }
     </script>
 </html>
